@@ -4,7 +4,7 @@ import Pixel from "../Pixel/Pixel";
 import "./Canvas.css";
 
 const Canvas = () => {
-  const { grid, setGrid } = useState(
+  const [matrix, setMatrix] = useState(
     Array(30)
       .fill()
       .map(() =>
@@ -16,14 +16,13 @@ const Canvas = () => {
 
   return (
     <div className={"canvas"}>
-      {console.log(grid)}
-      {grid.map((row, rowIndex) =>
+      {matrix.map((row, rowIndex) =>
         row.map((_, colIndex) => {
           console.log(rowIndex, colIndex);
           return (
             <Pixel
               key={`${rowIndex}-${colIndex}`}
-              background={Colors[grid[rowIndex][colIndex]]}
+              background={Colors[matrix[rowIndex][colIndex]]}
             />
           );
         })
