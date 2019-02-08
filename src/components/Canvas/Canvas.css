@@ -1,0 +1,5 @@
+.canvas {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
