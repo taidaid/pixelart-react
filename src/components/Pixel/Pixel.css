@@ -17,3 +17,7 @@
   border: 1px solid lightgray;
   box-sizing: border-box;
 }
+
+.pixel.current-color {
+  border: 4px solid yellow;
+}
