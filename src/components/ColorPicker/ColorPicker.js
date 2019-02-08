@@ -11,7 +11,7 @@ const ColorPicker = props => {
             key={index}
             onClick={() => props.setColor(index)}
             background={color}
-            current={Colors[PaymentResponse.currentColor] === color}
+            current={Colors[props.currentColor] === color}
           />
         );
       })}

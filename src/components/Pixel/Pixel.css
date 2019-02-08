@@ -19,5 +19,5 @@
 }
 
 .pixel.current-color {
-  border: 4px solid yellow;
+  border: 3px dashed rgb(152, 233, 39);
 }
