@@ -10,6 +10,15 @@
 .darkblue {
   background-color: rgb(33, 150, 243);
 }
+.lightgreen {
+  background-color: lightgreen;
+}
+.green {
+  background-color: green;
+}
+.darkgreen {
+  background-color: darkgreen;
+}
 
 .pixel {
   width: 30px;
