@@ -38,6 +38,19 @@ const Canvas = props => {
     }
   };
 
+  const clearCanvas = () => {
+    setMatrix(
+      Array(30)
+        .fill()
+        .map(() =>
+          Array(30)
+            .fill()
+            .map(() => 0)
+        )
+    );
+    localStorage.clear();
+  };
+
   useEffect(() => {
     const loadCanvasFromLocalStorage = () => {
       if (localStorage.hasOwnProperty("matrix")) {
@@ -53,18 +66,23 @@ const Canvas = props => {
   });
 
   return (
-    <div className={"canvas"}>
-      {matrix.map((row, rowIndex) =>
-        row.map((_, colIndex) => {
-          return (
-            <Pixel
-              key={`${rowIndex}-${colIndex}`}
-              background={Colors[matrix[rowIndex][colIndex]]}
-              onClick={() => changeColor(rowIndex, colIndex)}
-            />
-          );
-        })
-      )}
+    <div className={"canvasarea"}>
+      <div className={"canvas"}>
+        {matrix.map((row, rowIndex) =>
+          row.map((_, colIndex) => {
+            return (
+              <Pixel
+                key={`${rowIndex}-${colIndex}`}
+                background={Colors[matrix[rowIndex][colIndex]]}
+                onClick={() => changeColor(rowIndex, colIndex)}
+              />
+            );
+          })
+        )}
+      </div>
+      <button className={"clearcanvas"} onClick={clearCanvas}>
+        Clear
+      </button>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import ColorPicker from "./components/ColorPicker/ColorPicker";
 
 const App = () => {
   const [color, setColor] = useState(0);
+
   return (
     <div className="App">
       <ColorPicker
@@ -13,6 +14,7 @@ const App = () => {
           setColor(color);
         }}
       />
+
       <Canvas currentColor={color} />
     </div>
   );
