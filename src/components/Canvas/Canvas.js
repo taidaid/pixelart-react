@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Colors from "../Colors/Colors";
 import Pixel from "../Pixel/Pixel";
 import "./Canvas.css";
@@ -23,7 +23,34 @@ const Canvas = props => {
     }
 
     setMatrix(newMatrix);
+    localStorage.clear();
+    try {
+      localStorage.setItem("matrix", JSON.stringify(newMatrix));
+    } catch (domException) {
+      if (
+        ["QuotaExceededError", "NS_ERROR_DOM_QUOTA_REACHED"].includes(
+          domException.name
+        )
+      ) {
+        console.log(domException);
+        // handle quota limit exceeded error
+      }
+    }
   };
+
+  useEffect(() => {
+    const loadCanvasFromLocalStorage = () => {
+      if (localStorage.hasOwnProperty("matrix")) {
+        const localCanvas = localStorage.getItem("matrix");
+        try {
+          setMatrix(JSON.parse(localCanvas));
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    };
+    loadCanvasFromLocalStorage();
+  });
 
   return (
     <div className={"canvas"}>
