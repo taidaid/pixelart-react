@@ -1,3 +1,5 @@
+This project uses React to allow a user to create pixel art and save/load locally.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
