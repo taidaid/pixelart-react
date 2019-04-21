@@ -66,7 +66,7 @@ const Canvas = props => {
   });
 
   return (
-    <div className={"canvasarea"}>
+    <div className="canvas-area">
       <div className={"canvas"}>
         {matrix.map((row, rowIndex) =>
           row.map((_, colIndex) => {
@@ -80,8 +80,8 @@ const Canvas = props => {
           })
         )}
       </div>
-      <button className={"clearcanvas"} onClick={clearCanvas}>
-        Clear
+      <button className={"clear-canvas"} onClick={clearCanvas}>
+        Clear Canvas
       </button>
     </div>
   );

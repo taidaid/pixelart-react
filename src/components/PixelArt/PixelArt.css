@@ -1,0 +1,10 @@
+.PixelArt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ColorPicker {
+  position: fixed;
+  left: 0;
+}

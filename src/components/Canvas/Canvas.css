@@ -4,14 +4,19 @@
   max-width: 900px;
 }
 
-.canvasarea {
+.canvas-area {
   display: flex;
   flex-flow: row;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.clearcanvas {
+.clear-canvas {
   color: black;
-  background: white;
+  background: lightgray;
   padding: 0px 2px 0px 0px;
+  box-shadow: 1px;
+  position: fixed;
+  right: 0;
 }

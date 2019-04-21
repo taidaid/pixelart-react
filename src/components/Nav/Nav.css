@@ -1,0 +1,33 @@
+/* Navigation bar */
+.main-nav {
+  display: flex;
+  list-style-type: none;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.main-nav li {
+  padding: 20px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.push-right {
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-nav {
+    font-size: 0.5em;
+    padding: 0;
+  }
+}
